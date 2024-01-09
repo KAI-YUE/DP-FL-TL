@@ -46,10 +46,6 @@ dataset: "cifar10_224"
 data_path: "./data/cifar10/"
 pytorch_builtin: True
 
-# dataset: "cifar10"
-# data_path: "./data/cifar10/"
-# pytorch_builtin: False
-
 # Log configurations
 output_folder: "experiments"
 test_interval: 1

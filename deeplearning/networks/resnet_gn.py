@@ -185,13 +185,4 @@ def ResNet50_GN(channel: int, num_classes: int, im_size, pretrained, **kwargs):
         num_ftrs = model.fc.in_features
         model.fc = nn.Linear(num_ftrs, 10)
         
-        # len_ = len(model.state_dict())
-        # i = 0
-        # for param in model.parameters():
-        #     param.requires_grad = False
-        #     i += 1
-        #     if i == len_:
-        #         param.requires_grad = True
-        # pass
-
     return model
