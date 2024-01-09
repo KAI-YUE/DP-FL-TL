@@ -1,0 +1,56 @@
+device: cuda
+seed: 1002
+
+# distributed settings
+rounds: 500
+total_users: 100
+user_num: 50
+part_rate: 0.3
+user_data_mapping: "data/cifar10/100user_dataidx_map2_1.00.dat"
+
+# compressor
+compressor: "ternary"
+#0.005,0.01,0.02
+A: 0.001
+B: 0.001
+optimal_config: True
+sparse_ratio: 1
+mu_target: 0.5
+
+# hyperparameters and settings
+aggregator: "mean"
+unbiased_indicator: True
+batch_size: 128
+local_epochs: 1
+optimizer: "SGD"
+momentum: 0
+nesterov: False
+lr: 1
+weight_decay: 0
+global_lr: 0.1
+global_lr_init: 0.1
+mc: 3
+
+# DP settings
+epsilon: 100
+delta: 1.e-5
+# max_grad_norm: 1.0
+clipping_scheme: "by_value"
+#0.00001, 0.0001,0.001, 0.01,0.1
+clipping_bound: 0.0001
+add_noise: False
+noise_multiplier: 1.
+
+model: "lenet"
+checkpoint_path: ""
+
+# Simulation dataset configurations
+dataset: "cifar10"
+data_path: "./data/cifar10/"
+
+# Log configurations
+output_folder: "experiments"
+test_interval: 1
+print_every:   20
+log_level:   "INFO"
+log_file:    "./train.log"
